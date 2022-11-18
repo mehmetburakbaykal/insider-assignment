@@ -28,14 +28,14 @@ function init() {
     const notificationTemplate = ` 
     <div class="notification-center">
       <div class="notification-container">
-        <h2 class="title">Size Özel İndirimleri Keşfedin</h2>
+        <h2 class="notification-center-title">Size Özel İndirimleri Keşfedin</h2>
         <ul class="notification-list">
            ${lastThreeProducts
              .map((product) => {
                return `<li class="notification" onclick="window.location.href='${
                  product.url
                }'">
-                      <img
+                      <img class="notification-img"
                         src="${product.product_image_url}"
                         alt="${product.name}"
                       />
@@ -57,22 +57,12 @@ function init() {
           <i class="fa-solid fa-x fa-xl"></i>
         </button>
         <button class="ringbell-btn btn hidden">
-          <i class="fa-solid fa-bell fa-xl"></i>
+        <i class="fa-solid fa-bell fa-xl"></i>
         </button>
       </div>
     </div>
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        background-color: lightgray;
-      }
 
       .notification-center {
         width: 400px;
@@ -94,6 +84,10 @@ function init() {
 
       .notification-title {
         padding-bottom: 10px;
+        font-size: 1.17em;
+        font-weight: bold;
+        margin-top: 10px !important;
+        margin-bottom: 5px !important;
       }
 
       .notification {
@@ -116,13 +110,13 @@ function init() {
         border-radius: 5px;
       }
 
-      img {
+      .notification-img {
         max-width: 24%;
         max-height: 24%;
         border-radius: 5px;
       }
       
-      .title {
+      .notification-center-title {
         width: auto;
         height: 50px;
         color: #FFFFFF;
@@ -132,6 +126,10 @@ function init() {
         justify-content: center;
         padding: 5px;
         border-radius: 5px 5px 0 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 10px !important;
+        margin-bottom: 5px !important;
       }
 
       .desc-container {
@@ -143,6 +141,10 @@ function init() {
 
       .description {
         margin-bottom: 0;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        margin: 0 0 10px;
       }
 
       .button-container {
