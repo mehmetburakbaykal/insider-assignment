@@ -1,10 +1,16 @@
 function init() {
   const REQUESTED_PRODUCT_COUNT = -3;
 
-  // get all visited products from Local Storage
-  const products = JSON.parse(
+  // get Local Storage data
+  const localStorageData = JSON.parse(
     localStorage.getItem("ins-last-visited-products-49218")
-  ).data;
+  );
+
+  // if there is no visited product for first visit website, localStorageData is null so i checked it
+  let products = [];
+  if(localStorageData) {
+    products = localStorageData.data;
+  }
 
   // last 3 products of the Local Storage items
   const lastThreeProducts = products.slice(REQUESTED_PRODUCT_COUNT);
@@ -29,7 +35,7 @@ function init() {
                       <div class="desc-container">
                         <h3 class="notification-title">${product.name}</h3>
                         <p class="description">
-                          Yalnızca size özel ${product.name} %${Math.floor(Math.random() * 40) + 10
+                          Yalnızca size özel ${product.name} %${Math.floor(Math.random() * 30) + 10
                 } İNDİRİMLİ!
                         </p>
                       </div>
@@ -151,7 +157,6 @@ function init() {
         color: #193DB0;
         background-color: #FFFFFF;
         border: 1px solid #193DB0;
-        transition-delay: 0.2s;
       }
       
       .hidden {
