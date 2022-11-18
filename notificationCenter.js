@@ -12,6 +12,7 @@ function init() {
   // get path name which includes "urun" for not execute the Notification Center
   const isProductPage = window.location.pathname.split("/")[3];
 
+  // if the page is not product page and visited local storage items above or equal 3
   if (!isProductPage && products.length >= 3) {
     const notificationTemplate = ` 
     <div class="notification-center">
@@ -149,8 +150,6 @@ function init() {
       hideButton.classList.remove("hidden");
       notificationContainer.classList.remove("hidden");
     });
-  } else {
-    // product sayfasında ise notification kapalı olacak
   }
 }
 
