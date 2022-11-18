@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-image: url("default-placeholder.png");
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+.notification-center {
+  width: 400px;
+  height: 470px;
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  right: 40px;
+}
+
+.notification-container {
+  background-color: #ffffff;
+}
+
+.title {
+  width: auto;
+  height: 50px;
+  background-color: rgb(255, 0, 85);
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+.notification {
+  display: flex;
+  padding: 10px;
+}
+
+.desc-container {
+  padding: 10px;
+}
+
+.notification-title {
+  padding-bottom: 10px;
+}
+
+li > img {
+  width: 120px;
+  height: 120px;
+}
+
+.btn-container {
+  position: fixed;
+  top: 550px;
+  right: 10px;
+}
+
+.btn {
+  color: #ffffff;
+  background-color: rgb(255, 0, 85);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
