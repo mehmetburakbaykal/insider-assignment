@@ -25,7 +25,7 @@ function init() {
         }'">
             <img
               src="${product.product_image_url}"
-              alt=""
+              alt="${product.name}"
             />
             <div class="desc-container">
               <h3 class="notification-title">${product.name}</h3>
@@ -153,5 +153,4 @@ function init() {
   }
 }
 
-// event listener yazılacak
 init();
