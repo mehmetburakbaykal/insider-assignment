@@ -144,6 +144,14 @@ function init() {
         border: none;
         border-radius: 50%;
         cursor: pointer;
+        transition: all 0.5s ease;
+      }
+
+      .btn:hover {
+        color: #193DB0;
+        background-color: #FFFFFF;
+        border: 1px solid #193DB0;
+        transition-delay: 0.2s;
       }
       
       .hidden {
