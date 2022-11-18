@@ -8,26 +8,33 @@ function init() {
 
   // if there is no visited product for first visit website, localStorageData is null so i checked it
   let products = [];
-  if(localStorageData) {
+  if (localStorageData) {
     products = localStorageData.data;
   }
 
   // last 3 products of the Local Storage items
   const lastThreeProducts = products.slice(REQUESTED_PRODUCT_COUNT);
 
-  // get path name which includes "urun" for not execute the Notification Center
+  // get path name which includes "urun" or "product" for not execute the Notification Center
   const isProductPage = window.location.pathname.split("/")[3];
 
+  // "urun" for TR page path, "product" for other languages
+  if (isProductPage === "urun" || isProductPage === "product") {
+    return;
+  }
+
   // if the page is not product page and visited local storage items above or equal 3
-  if (!isProductPage && products.length >= 3) {
+  if (products.length >= 3) {
     const notificationTemplate = ` 
     <div class="notification-center">
       <div class="notification-container">
         <h2 class="title">Size Özel İndirimleri Keşfedin</h2>
         <ul class="notification-list">
-           ${lastThreeProducts.map((product) => {
-              return `<li class="notification" onclick="window.location.href='${product.url
-                }'">
+           ${lastThreeProducts
+             .map((product) => {
+               return `<li class="notification" onclick="window.location.href='${
+                 product.url
+               }'">
                       <img
                         src="${product.product_image_url}"
                         alt="${product.name}"
@@ -35,12 +42,14 @@ function init() {
                       <div class="desc-container">
                         <h3 class="notification-title">${product.name}</h3>
                         <p class="description">
-                          Yalnızca size özel ${product.name} %${Math.floor(Math.random() * 30) + 10
-                } İNDİRİMLİ!
+                          Yalnızca size özel ${product.name} %${
+                 Math.floor(Math.random() * 30) + 10
+               } İNDİRİMLİ!
                         </p>
                       </div>
-                    </li>`
-            }).join("")}
+                    </li>`;
+             })
+             .join("")}
         </ul>
       </div>
       <div class="button-container">
