@@ -18,5 +18,9 @@ ringbellButton.addEventListener("click", function () {
 
 //local storage
 let visitedProducts = [];
-JSON.parse(localStorage.getItem('ins-last-visited-products-49218'));
+let products = JSON.parse(localStorage.getItem('ins-last-visited-products-49218')).data;
+products.map((product) => {
+    visited.push(product);
+})
+console.log(visitedProducts[0].url);
 
