@@ -87,8 +87,18 @@ function init() {
         cursor: pointer;
       }
 
+      .notification:not(:first-child) {
+        padding-top: 7px;
+      }
+
       .notification:not(:last-child) {
-        margin-bottom: 15px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid lightgrey;
+      }
+
+      .notification:hover {
+        background-color: rgb(244, 244, 244);
+        border-radius: 5px;
       }
 
       img {
@@ -116,10 +126,14 @@ function init() {
         padding: 10px;
       }
 
+      .description {
+        margin-bottom: 0;
+      }
+
       .button-container {
-        position: fixed;
-        top: 630px;
-        right: 10px;
+        position: absolute;
+        top: 496px;
+        right: -24px;
       }
       
       .btn {
