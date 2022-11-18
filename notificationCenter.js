@@ -23,7 +23,7 @@ function init() {
     return;
   }
 
-  // if the page is not product page and visited local storage items above or equal 3
+  // if visited local storage items above or equal 3
   if (products.length >= 3) {
     const notificationTemplate = ` 
     <div class="notification-center">
