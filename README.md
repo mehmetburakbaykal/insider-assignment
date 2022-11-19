@@ -7,4 +7,5 @@ of the LC Waikiki website. It is visible for all pages, except product pages. Al
 it changes depends on your visited products.
 
 You can run as; 
+
 Copy-paste my code on LC Waikiki developer tools console, then press enter.
