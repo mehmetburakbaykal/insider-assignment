@@ -15,11 +15,10 @@ function init() {
   // last 3 products of the Local Storage items
   const lastThreeProducts = products.slice(REQUESTED_PRODUCT_COUNT);
 
-  // get path name which includes "urun" or "product" for not execute the Notification Center
+  // get path name which includes "urun" for not execute the Notification Center
   const isProductPage = window.location.pathname.split("/")[3];
 
-  // "urun" for TR page path, "product" for other languages
-  if (isProductPage === "urun" || isProductPage === "product") {
+  if (isProductPage === "urun") {
     return;
   }
 
